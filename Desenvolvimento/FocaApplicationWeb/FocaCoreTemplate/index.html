@@ -1,0 +1,151 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>FOCA</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+	    <link href="app/core.css" rel="stylesheet"/>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+	<div id="wrapper">
+
+	    <!-- Main -->
+        <div id="main" style="display: none;">
+            <div class="inner">
+
+                <!-- Content -->
+                <section class="panel-primeiro">
+                    <div style="width: 90%; margin: auto;">
+                        <span class="image main">
+                            <img src="images/foca.png" alt="" style="width: 70px; margin: auto;" />
+                        </span>
+                        <br />
+                        <br />
+                        <center>
+                            <p id="entre_com_telefone_ou_email_para_logar"></p>
+                        </center>
+                        <br />
+                        <input id="txt-login" class="input" type="text" value="" placeholder="" />
+                        <br />
+                        <br />
+                        <input id="btn-login" type="button" value=""/>
+                        <br/>
+                        <br/>
+                        <input type="checkbox" checked="checked" /> <label id="concordo_termos_de_uso"> Concordo com os <a href="termosdeuso.html">termos de uso</a></label>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Panel-Confirmacao -->
+	    <div id="panel-confirmacao" style="display: none; z-index: 9999;">
+	        <div class="inner">
+
+	            <!-- Content -->
+	            <section class="panel-primeiro">
+	                <div style="width: 90%; margin: auto;">
+	                    <span class="image main">
+                            <img src="images/foca.png" alt="" style="width: 70px; margin: auto;" />
+                        </span>
+	                    <br/>
+	                    <br/>
+	                    <center>
+	                        <p id="um_email_sms_foi_enviado"></p>
+	                    </center>
+	                    <br/>
+	                    <table>
+	                        <tr>
+	                            <td><input id="txt-confirmacao1" class="input" type="number" value="" maxlength="1" placeholder="" /></td>
+	                            <td><input id="txt-confirmacao2" class="input" type="number" value="" maxlength="1" placeholder="" /></td>
+	                            <td><input id="txt-confirmacao3" class="input" type="number" value="" maxlength="1" placeholder="" /></td>
+	                            <td><input id="txt-confirmacao4" class="input" type="number" value="" maxlength="1" placeholder="" /></td>
+	                        </tr>
+	                    </table>
+	                    <br/>
+	                    <br/>
+	                    <input id="btn-confirmacao" type="button" value=""/>
+	                    <br/>
+                        <br />
+	                    <p style="color: #aed963;" id="reenviar_o_codigo"></p>
+	                    <p><span id="reenviando_em_"></span> <span id="count_down"></span></p>
+	                </div>
+	            </section>
+
+	        </div>
+	    </div>
+        
+        <!-- Panel-login -->
+        <div id="panel-login" style="display: none;">
+            <div class="inner">
+
+                <!-- Content -->
+                <section class="panel-primeiro">
+                    <div style="width: 90%; margin: auto;">
+                        <span class="image main">
+                            <img src="images/foca.png" alt="" style="width: 70px; margin: auto;" />
+                        </span>
+                        <br />
+                        <br />
+                        <center>
+                            <p id="digite_seus_dados_de_acesso"></p>
+                        </center>
+                        <br />
+                        <input id="txt-email-sms" class="input" type="text" value="" placeholder="" />
+                        <br/>
+                        <input id="txt-pass" class="input" type="password" value="" placeholder="" />
+                        <br />
+                        <br />
+                        <input id="btn-email-sms" type="button" value=""/>
+                        <br />
+                        <br/>
+                        <input id="btn-esquecisenha-sms" type="button" value="" style="z-index: 9999;" />
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+	</div>
+
+
+
+	<div id="panel-bottom">
+	    <p style="width: 250px; margin: 6px auto 0 auto; color: #313234;" id="ja_possui_uma_conta">
+
+	    </p>
+	</div>
+
+	<div id="panel-footer-login"></div>
+	
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+    <script src="assets/js/jquery.mask.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+	<script src="app/core.js"></script>
+        <!--framework-->
+	<script src="app/core.js"></script>
+    <script src="app/glossario.js"></script>
+        <!--controller-->
+	<script src="app/controller/login.js"></script>
+	    <!--model-->
+    <script src="app/model/login.js"></script>
+	<script>
+        $(document).ready(function () {
+
+            Glossario.Id = 0;
+            
+            FOCA.Model.Login.logImediate(Glossario.Id);
+	    });
+	</script>
+	</body>
+</html>

@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Foca" Class="FocaDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=201.65.0.71,7500;Initial Catalog=Foca;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FocaConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CodigoAtributo" Member="CodigoAtributos">
+    <Type Name="CodigoAtributo">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoAtributo_CodigoAtributoCodigoCliente" Member="CodigoAtributoCodigoClientes" ThisKey="Id" OtherKey="IdCodigoAtributo" Type="CodigoAtributoCodigoCliente" />
+      <Association Name="CodigoAtributo_CodigoAtuacaoCodigoAtributo" Member="CodigoAtuacaoCodigoAtributos" ThisKey="Id" OtherKey="IdCodigoAtributo" Type="CodigoAtuacaoCodigoAtributo" />
+      <Association Name="CodigoAtributo_RunFilaViva" Member="RunFilaVivas" ThisKey="Id" OtherKey="IdCodigoAtributo" Type="RunFilaViva" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunUsuario" Member="RunUsuarios">
+    <Type Name="RunUsuario">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Senha" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="RunUsuario_RunAcesso" Member="RunAcessos" ThisKey="Id" OtherKey="IdRunUsuario" Type="RunAcesso" />
+      <Association Name="CodigoCliente_RunUsuario" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodigoAtributoCodigoCliente" Member="CodigoAtributoCodigoClientes">
+    <Type Name="CodigoAtributoCodigoCliente">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoAtributo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoAtributo_CodigoAtributoCodigoCliente" Member="CodigoAtributo" ThisKey="IdCodigoAtributo" OtherKey="Id" Type="CodigoAtributo" IsForeignKey="true" />
+      <Association Name="CodigoCliente_CodigoAtributoCodigoCliente" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodigoAtuacaoCodigoAtributo" Member="CodigoAtuacaoCodigoAtributos">
+    <Type Name="CodigoAtuacaoCodigoAtributo">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoRegiaoAtuacao" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdCodigoAtributo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoAtributo_CodigoAtuacaoCodigoAtributo" Member="CodigoAtributo" ThisKey="IdCodigoAtributo" OtherKey="Id" Type="CodigoAtributo" IsForeignKey="true" />
+      <Association Name="CodigoRegiaoAtuacao_CodigoAtuacaoCodigoAtributo" Member="CodigoRegiaoAtuacao" ThisKey="IdCodigoRegiaoAtuacao" OtherKey="Id" Type="CodigoRegiaoAtuacao" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodigoCliente" Member="CodigoClientes">
+    <Type Name="CodigoCliente">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoTipoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DDD" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Telefone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TelefoneCompleto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Banco" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Agencia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Conta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CPF" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NomeCompleto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FlgPerfilConfirmado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoCliente_RunUsuario" Member="RunUsuarios" ThisKey="Id" OtherKey="IdCodigoCliente" Type="RunUsuario" />
+      <Association Name="CodigoCliente_CodigoAtributoCodigoCliente" Member="CodigoAtributoCodigoClientes" ThisKey="Id" OtherKey="IdCodigoCliente" Type="CodigoAtributoCodigoCliente" />
+      <Association Name="CodigoCliente_CodigoClienteCodigoStatusPrestador" Member="CodigoClienteCodigoStatusPrestadors" ThisKey="Id" OtherKey="IdCodigoCliente" Type="CodigoClienteCodigoStatusPrestador" />
+      <Association Name="CodigoCliente_CodigoMeioPagamento" Member="CodigoMeioPagamentos" ThisKey="Id" OtherKey="IdCodigoCliente" Type="CodigoMeioPagamento" />
+      <Association Name="CodigoCliente_CodigoRegiaoAtuacaoCodigoCliente" Member="CodigoRegiaoAtuacaoCodigoClientes" ThisKey="Id" OtherKey="IdCodigoCliente" Type="CodigoRegiaoAtuacaoCodigoCliente" />
+      <Association Name="CodigoCliente_RunCodigoConfirmacao" Member="RunCodigoConfirmacaos" ThisKey="Id" OtherKey="IdCodigoCliente" Type="RunCodigoConfirmacao" />
+      <Association Name="CodigoCliente_RunEndereco" Member="RunEnderecos" ThisKey="Id" OtherKey="IdCodigoCliente" Type="RunEndereco" />
+      <Association Name="CodigoCliente_RunFilaViva" Member="RunFilaVivas" ThisKey="Id" OtherKey="IdCodigoClientePrestador" Type="RunFilaViva" />
+      <Association Name="CodigoCliente_RunImageCodigoCliente" Member="RunImageCodigoClientes" ThisKey="Id" OtherKey="IdCodigoCliente" Type="RunImageCodigoCliente" />
+      <Association Name="CodigoCliente_RunKiLimpezaOperacao" Member="RunKiLimpezaOperacaos" ThisKey="Id" OtherKey="IdCodigoCliente" Type="RunKiLimpezaOperacao" />
+      <Association Name="CodigoCliente_RunLancamento" Member="RunLancamentos" ThisKey="Id" OtherKey="IdCodigoCliente" Type="RunLancamento" />
+      <Association Name="CodigoCliente_RunNotificacao" Member="RunNotificacaos" ThisKey="Id" OtherKey="IdCodigoCliente" Type="RunNotificacao" />
+      <Association Name="CodigoCliente_RunOperacao" Member="RunOperacaos" ThisKey="Id" OtherKey="IdCodigoCliente" Type="RunOperacao" />
+      <Association Name="CodigoCliente_RunRating" Member="RunRatings" ThisKey="Id" OtherKey="IdCodigoClienteCliente" Type="RunRating" />
+      <Association Name="CodigoCliente_RunRating1" Member="RunRatings1" ThisKey="Id" OtherKey="IdCodigoClientePretador" Type="RunRating" />
+      <Association Name="CodigoTipoCliente_CodigoCliente" Member="CodigoTipoCliente" ThisKey="IdCodigoTipoCliente" OtherKey="Id" Type="CodigoTipoCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodigoClienteCodigoStatusPrestador" Member="CodigoClienteCodigoStatusPrestadors">
+    <Type Name="CodigoClienteCodigoStatusPrestador">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdCodigoStatusPrestador" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoCliente_CodigoClienteCodigoStatusPrestador" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+      <Association Name="CodigoStatusPrestador_CodigoClienteCodigoStatusPrestador" Member="CodigoStatusPrestador" ThisKey="IdCodigoStatusPrestador" OtherKey="Id" Type="CodigoStatusPrestador" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodigoMeioPagamento" Member="CodigoMeioPagamentos">
+    <Type Name="CodigoMeioPagamento">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="FlgCartao" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NumeroCartao" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NomeCartao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DataValidade" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NumeroSeguranca" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InfoAdd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoMeioPagamento_RunPagamento" Member="RunPagamentos" ThisKey="Id" OtherKey="IdMeioPagamento" Type="RunPagamento" />
+      <Association Name="CodigoCliente_CodigoMeioPagamento" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodigoOperacao" Member="CodigoOperacaos">
+    <Type Name="CodigoOperacao">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NomeDemanda" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CodigoDemanda" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorInteiro" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoOperacao_RunOperacao" Member="RunOperacaos" ThisKey="Id" OtherKey="IdCodigoOperacao" Type="RunOperacao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodigoRegiaoAtuacao" Member="CodigoRegiaoAtuacaos">
+    <Type Name="CodigoRegiaoAtuacao">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodigoRegiao" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="NomeSubBairro" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Cidade" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="UF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoRegiaoAtuacao_CodigoAtuacaoCodigoAtributo" Member="CodigoAtuacaoCodigoAtributos" ThisKey="Id" OtherKey="IdCodigoRegiaoAtuacao" Type="CodigoAtuacaoCodigoAtributo" />
+      <Association Name="CodigoRegiaoAtuacao_CodigoRegiaoAtuacaoCodigoCliente" Member="CodigoRegiaoAtuacaoCodigoClientes" ThisKey="Id" OtherKey="IdCodigoRegiaoAtuacao" Type="CodigoRegiaoAtuacaoCodigoCliente" />
+      <Association Name="CodigoRegiaoAtuacao_RunFilaViva" Member="RunFilaVivas" ThisKey="Id" OtherKey="IdCodigoRegiaoAtuacao" Type="RunFilaViva" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodigoRegiaoAtuacaoCodigoCliente" Member="CodigoRegiaoAtuacaoCodigoClientes">
+    <Type Name="CodigoRegiaoAtuacaoCodigoCliente">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoRegiaoAtuacao" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoCliente_CodigoRegiaoAtuacaoCodigoCliente" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+      <Association Name="CodigoRegiaoAtuacao_CodigoRegiaoAtuacaoCodigoCliente" Member="CodigoRegiaoAtuacao" ThisKey="IdCodigoRegiaoAtuacao" OtherKey="Id" Type="CodigoRegiaoAtuacao" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodigoStatusPrestador" Member="CodigoStatusPrestadors">
+    <Type Name="CodigoStatusPrestador">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoStatusPrestador_CodigoClienteCodigoStatusPrestador" Member="CodigoClienteCodigoStatusPrestadors" ThisKey="Id" OtherKey="IdCodigoStatusPrestador" Type="CodigoClienteCodigoStatusPrestador" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodigoTipoCliente" Member="CodigoTipoClientes">
+    <Type Name="CodigoTipoCliente">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoTipoCliente_CodigoCliente" Member="CodigoClientes" ThisKey="Id" OtherKey="IdCodigoTipoCliente" Type="CodigoCliente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunAcesso" Member="RunAcessos">
+    <Type Name="RunAcesso">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdRunUsuario" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DataAcesso" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Dispositivo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IMEI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IP4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IP6" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="RunUsuario_RunAcesso" Member="RunUsuario" ThisKey="IdRunUsuario" OtherKey="Id" Type="RunUsuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunCodigoConfirmacao" Member="RunCodigoConfirmacaos">
+    <Type Name="RunCodigoConfirmacao">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FlgEmail" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgTelefone" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoCliente_RunCodigoConfirmacao" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunEndereco" Member="RunEnderecos">
+    <Type Name="RunEndereco">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Endereco" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Complemento" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoCliente_RunEndereco" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunFilaViva" Member="RunFilaVivas">
+    <Type Name="RunFilaViva">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoClientePrestador" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdCodigoAtributo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdCodigoRegiaoAtuacao" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdRunDemanda" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Ordem" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DataAlteração" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgAceiteDemanda" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgRecusaDemanda" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgCancelaDemanda" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoAtributo_RunFilaViva" Member="CodigoAtributo" ThisKey="IdCodigoAtributo" OtherKey="Id" Type="CodigoAtributo" IsForeignKey="true" />
+      <Association Name="CodigoCliente_RunFilaViva" Member="CodigoCliente" ThisKey="IdCodigoClientePrestador" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+      <Association Name="CodigoRegiaoAtuacao_RunFilaViva" Member="CodigoRegiaoAtuacao" ThisKey="IdCodigoRegiaoAtuacao" OtherKey="Id" Type="CodigoRegiaoAtuacao" IsForeignKey="true" />
+      <Association Name="RunKiLimpezaOperacao_RunFilaViva" Member="RunKiLimpezaOperacao" ThisKey="IdRunDemanda" OtherKey="Id" Type="RunKiLimpezaOperacao" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunImage" Member="RunImages">
+    <Type Name="RunImage">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="RunImage_RunImageCodigoCliente" Member="RunImageCodigoClientes" ThisKey="Id" OtherKey="IdRunImage" Type="RunImageCodigoCliente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunImageCodigoCliente" Member="RunImageCodigoClientes">
+    <Type Name="RunImageCodigoCliente">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdRunImage" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoCliente_RunImageCodigoCliente" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+      <Association Name="RunImage_RunImageCodigoCliente" Member="RunImage" ThisKey="IdRunImage" OtherKey="Id" Type="RunImage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunKiLimpezaOperacao" Member="RunKiLimpezaOperacaos">
+    <Type Name="RunKiLimpezaOperacao">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdProfissional" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NomeProfissional" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DataPedido" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UidPedido" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="EnderecoCompleto" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Bairro" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="UF" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FlgGenero" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TempoTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FlgPagamento" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataPagamento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FlgAceiteProfissional" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataAceiteProfissional" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FlgChegada" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataChegada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FlgFinalizado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataFinalizado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FlgRatting" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ValueRatting" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FlgRattingPrestador" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ValueRattingPrestador" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QtdQuartos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QtdBanheiros" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QtdSalas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FlgArmarios" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgGeladeira" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgLouca" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgCozinha" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgFogao" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgPassar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgMateriais" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="RunKiLimpezaOperacao_RunFilaViva" Member="RunFilaVivas" ThisKey="Id" OtherKey="IdRunDemanda" Type="RunFilaViva" />
+      <Association Name="CodigoCliente_RunKiLimpezaOperacao" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunLancamento" Member="RunLancamentos">
+    <Type Name="RunLancamento">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DataOperacao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ValorOperacao" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorOperacaoInteiro" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgPagamento" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataConfirmacaoPagamento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="RunLancamento_RunLancamentoRunPagamento" Member="RunLancamentoRunPagamentos" ThisKey="Id" OtherKey="IdRunLancamento" Type="RunLancamentoRunPagamento" />
+      <Association Name="RunLancamento_RunOperacao" Member="RunOperacaos" ThisKey="Id" OtherKey="IdRunLancamento" Type="RunOperacao" />
+      <Association Name="CodigoCliente_RunLancamento" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunLancamentoRunPagamento" Member="RunLancamentoRunPagamentos">
+    <Type Name="RunLancamentoRunPagamento">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdRunLancamento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdRunPagamento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="RunLancamento_RunLancamentoRunPagamento" Member="RunLancamento" ThisKey="IdRunLancamento" OtherKey="Id" Type="RunLancamento" IsForeignKey="true" />
+      <Association Name="RunPagamento_RunLancamentoRunPagamento" Member="RunPagamento" ThisKey="IdRunPagamento" OtherKey="Id" Type="RunPagamento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunNotificacao" Member="RunNotificacaos">
+    <Type Name="RunNotificacao">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Msg" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoCliente_RunNotificacao" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunOperacao" Member="RunOperacaos">
+    <Type Name="RunOperacao">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdRunLancamento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdCodigoOperacao" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ValorOperacao" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorOperacaoInteiro" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoCliente_RunOperacao" Member="CodigoCliente" ThisKey="IdCodigoCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+      <Association Name="CodigoOperacao_RunOperacao" Member="CodigoOperacao" ThisKey="IdCodigoOperacao" OtherKey="Id" Type="CodigoOperacao" IsForeignKey="true" />
+      <Association Name="RunLancamento_RunOperacao" Member="RunLancamento" ThisKey="IdRunLancamento" OtherKey="Id" Type="RunLancamento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunPagamento" Member="RunPagamentos">
+    <Type Name="RunPagamento">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdTipoOperacao" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdMeioPagamento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdCodigoCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ValorPago" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorPagoInteiro" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="RunPagamento_RunLancamentoRunPagamento" Member="RunLancamentoRunPagamentos" ThisKey="Id" OtherKey="IdRunPagamento" Type="RunLancamentoRunPagamento" />
+      <Association Name="CodigoMeioPagamento_RunPagamento" Member="CodigoMeioPagamento" ThisKey="IdMeioPagamento" OtherKey="Id" Type="CodigoMeioPagamento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RunRating" Member="RunRatings">
+    <Type Name="RunRating">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCodigoClienteCliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdCodigoClientePretador" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IndiceAvaliacao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DescricaoAvaliacao" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="FlgAtivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataFim" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="CodigoCliente_RunRating" Member="CodigoCliente" ThisKey="IdCodigoClienteCliente" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+      <Association Name="CodigoCliente_RunRating1" Member="CodigoCliente1" ThisKey="IdCodigoClientePretador" OtherKey="Id" Type="CodigoCliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

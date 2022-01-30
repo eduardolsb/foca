@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\maste\Dropbox\Projeto FOCA\Desenvolvimento\FocaApplicationService\FocaWebServiceApplicationPublish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AspNet.ScriptManager.jQuery.dll">
+      <publishTime>08/29/2017 11:37:32</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.jQuery.UI.Combined.dll">
+      <publishTime>08/29/2017 11:37:33</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.AspNet.dll">
+      <publishTime>08/29/2017 11:37:40</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>08/29/2017 11:37:35</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>08/29/2017 11:37:37</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>08/29/2017 11:37:36</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>08/29/2017 11:37:38</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>08/29/2017 11:37:39</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>08/29/2017 11:37:41</publishTime>
+    </File>
+    <File Include="bin/FocaWebServiceApplication.dll">
+      <publishTime>10/17/2017 21:00:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
+      <publishTime>08/29/2017 11:37:45</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Membership.OpenAuth.dll">
+      <publishTime>08/29/2017 11:37:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>08/29/2017 11:37:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.Providers.dll">
+      <publishTime>08/29/2017 11:37:30</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>09/05/2017 22:21:25</publishTime>
+    </File>
+    <File Include="Model/FocaDataClasses.dbml">
+      <publishTime>10/10/2017 13:49:58</publishTime>
+    </File>
+    <File Include="NOTIFICACAO/Default.aspx">
+      <publishTime>09/26/2017 19:07:32</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/06/2017 00:08:26</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>09/13/2017 01:51:34</publishTime>
+    </File>
+    <File Include="SMS/Default.aspx">
+      <publishTime>09/13/2017 15:59:08</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>10/17/2017 21:00:21</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

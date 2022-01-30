@@ -1,0 +1,207 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>FOCA</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+					    <div class="inner" style="margin-top: 0; width: 100%; height: 120px; text-align: center; background: #000; position: fixed;">
+					        <img alt="" src="images/foca.png" style="width: 40px; margin-top: 10px; opacity: 0.2;" />
+					        <h5 id="txt_ki_faxina" style="color: #1cc7c4 !important;"> </h5>
+                            
+					        <div style="width: 100%; height: 30px; margin-top:0px;">
+					            <h4 id="com_materiais" name="1" style="float: left; color: #1cc7c4">Nosso Material</h4>
+                                <h4 id="sem_materiais" name="0" style="float: right;">Seu Material</h4>
+					        </div>
+					    </div>
+
+                        <div class="inner" style="margin-top:130px; width: 100%; text-align: center; ">
+                            <h3>Serviços em Cômodos</h3>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <!--<div style="width: 80px; height: 80px; border-radius: 50%; background: #cfd3f4 url(images/cama.png) center center no-repeat; background-size: 60%; margin: auto;"></div>-->
+                                        <div id="div-style-cama" style="width: 80px; height: 80px; border-radius: 50%; background: #fff url(images/cama.png) center center no-repeat; background-size: 60%; margin: auto;"></div>
+                                        <br />
+                                        <div style="width: 80px; margin: auto;">
+                                            <center>
+                                                <button id="c1-plus" style="width: 80px; float: left;">+</button>
+                                                <input id="c1" type="text" value="0" style="width: 80px; float: left; text-align: center; " />
+                                                <button id="c1-less" style="width: 80px; float: left;">-</button>
+                                            </center>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id="div-style-banheira" style="width: 80px; height: 80px; border-radius: 50%; background: #fff url(images/banheira.png) center center no-repeat; background-size: 60%; margin: auto;"></div>
+                                        <br />
+                                        <div style="width: 80px; margin: auto;">
+                                            <center>
+                                                <button id="c2-plus" style="width: 80px; float: left;">+</button>
+                                                <input id="c2" type="text" value="0" style="width: 80px; float: left; text-align: center;" />
+                                                <button id="c2-less" style="width: 80px; float: left;">-</button>
+                                            </center>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id="div-style-lustre" style="width: 80px; height: 80px; border-radius: 50%; background: #fff url(images/lustre.png) center center no-repeat; background-size: 60%; margin: auto; "></div>
+                                        <br />
+                                        <div style="width: 80px; margin: auto; text-align: center;">
+                                            <center>
+                                                <button id="c3-plus" style="width: 80px; float: left;">+</button>
+                                                <input id="c3" type="text" value="0" style="width: 80px; float: left; text-align: center;" />
+                                                <button id="c3-less" style="width: 80px; float: left;">-</button>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <h3>Opcionais</h3>
+                            <table>
+                                <tr>
+                                    <td> <img alt="" id="txt-lavar-armarios" name="0" style="width: 130px;" src="images/lavar-armarios.png"/> </td>
+                                    <td> <img alt="" id="txt-lavar-geladeira" name="0" style="width: 130px; " src="images/lavar-geladeira.png" /> </td>
+                                </tr>
+                                <tr>
+                                    <td> <img alt="" id="txt-lavar-louca" name="0" style="width: 130px; " src="images/lavar-louca.png" /> </td>
+                                    <td> <!--<img alt="" id="txt-lavar-cozinha" name="0" style="width: 130px; " src="images/lavar-utencilios-cozinha.png"/>-->
+                                        <img alt="" id="txt-passar" name="0" style="width: 130px; " src="images/passar-roupa.png" />
+                                    </td>
+                                </tr>
+                                <!--<tr>
+                                    <td> <img alt="" id="txt-lavar-fogao" name="0" style="width: 130px; " src="images/lavar-utencilios-fogao.png" /> </td>
+                                    <td> <img alt="" id="txt-passar" name="0" style="width: 130px; " src="images/passar-roupa.png" /> </td>
+                                </tr>-->
+                            </table>
+
+                            <h3>Ajuste da hora</h3>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div style="width: 300px; height: 50px; float: none; margin: auto;">
+                                            <div style="width: 100%; height: 100px; float: none; margin-left: 30px;">
+
+                                                <button id="c1-hora-less" style="width: 80px; float: left;">-</button>
+                                                <h6 style="float: left; ; margin: 10px;"><span id="total-horas" style="font-size: 25px;"></span>h</h6>
+                                                <button id="c1-hora-plus" style="width: 80px; float: left;">+</button>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <h3>Total da Ordem</h3>
+                            <table>
+                                <tr>
+                                    <td> <img alt="" style="width: 50px;" src="images/cart.png"/> </td>
+                                    <td>
+                                        <h3> Total: R$ <span id="total-reais" style="font-size: 35px; color: #1cc7c4;"></span> </h3>
+                                    </td>
+                                </tr>
+                            </table>
+                            <input id="btn-continuar" type="button" value="Continuar  >>" style="width: 250px;"/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+                            <section id="search" class="alt">
+                                <!--<form method="post" action="#">
+            <input type="text" name="query" id="query" placeholder="Search"/>
+        </form>-->
+                                <div style="background: #555; border-radius: 50%; width: 100px; height: 100px;">
+                                    <img id="img-perfil" alt="" src="images/profile.png" style="border-radius: 50%; width: 100px; height: 100px; margin: auto;" />
+                                </div>
+                                <h2 id="txt-nome-perfil"> </h2>
+                                <h5 onclick="FOCA.Structure.logout();"> SAIR </h5>
+                            </section>
+
+                            <!-- Menu -->
+                            <nav id="menu">
+                                <ul>
+                                    <li><a href="kifaxina.html" id="inicio"></a></li>
+                                    <li><a href="orders.html" id="meus_pedidos"></a></li>
+                                    <li><a href="perfil.html" id="meu_perfil"></a></li>
+                                    <li>
+                                        <span class="opener" id="meus_servicos"></span>
+                                        <ul>
+                                            <li><a href="kifaxina.html" id="ki_faxina"></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+
+							<!-- Section -->
+								<section>
+								    <!--<ul class="contact">
+								        <li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
+								        <li class="fa-phone">(000) 000-0000</li>
+								        <li class="fa-home">Barra da Tijuca | Campo Grande <br/>
+								            Rio de Janeiro - Brasil</li>
+								    </ul>-->
+                                    <p class="copyright">&copy; FOCA corp</p>
+								</section>
+						</div>
+					</div>
+
+			</div>
+
+	<!--<div id="panel-menu-down" style="width: 100%; height: 80px; position: fixed; left: 0; right: 0; bottom: 0;">
+	    <div onclick="location.href = 'kifaxina.html';" style="width: 32%; height: 70px; float: left; background: url(images/home.png) center center no-repeat; background-size: 70px 70px; "></div>
+	    <div onclick="location.href = 'orders.html';" style="width: 32%; height: 70px; float: left; background: url(images/orders.png) center center no-repeat; background-size: 70px 70px; "></div>
+	    <div onclick="location.href = 'perfil.html';" style="width: 32%; height: 70px; float: left; background: url(images/prof.png) center center no-repeat; background-size: 70px 70px; "></div>
+	</div>-->
+        <div id="panel-menu-down" style="width: 100%; height: 40px; position: fixed; left: 0; right: 0; bottom: 0; border-top: solid 1px #dde1e3; background: #FFF; ">
+            <div onclick="location.href = 'kifaxina.html';" style="width: 32%; height: 40px; float: left; background: url(images/home.png) center center no-repeat; background-size: 20px 20px; "></div>
+            <div onclick="location.href = 'orders.html';" style="width: 32%; height: 40px; float: left; background: url(images/orders.png) center center no-repeat; background-size: 20px 20px; "></div>
+            <div onclick="location.href = 'perfil.html';" style="width: 32%; height: 40px; float: left; background: url(images/prof.png) center center no-repeat; background-size: 20px 20px; "></div>
+        </div>
+	<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	    <script src="assets/js/main.js"></script>
+
+	    <script src="app/core.js"></script>
+        <script src="app/glossario.js"></script>
+        <script src="app/controller/kifaxina.js"></script>
+        <script src="app/model/kifaxina.js"></script>
+	    <script type="text/javascript">
+	    
+    	    $(document).ready(function () {
+
+    	        Glossario.Id = 0;
+
+    	        FOCA.Controller.Kifaxina.load(Glossario.Id);
+
+
+    	    });
+
+    	</script>
+	</body>
+</html>

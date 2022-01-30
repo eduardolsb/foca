@@ -1,0 +1,134 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>FOCA</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+					    <div class="inner" style="margin-top: 0; width: 100%; height: 80px; text-align: center; background: #000;">
+					        <img alt="" src="images/foca.png" style="width: 40px; margin-top: 10px; opacity: 0.2;" />
+					        <h5 id="sessao_de_servicos" style="color: #1cc7c4 !important; ">  </h5>
+
+					    </div>
+
+                        <div class="inner" style="margin-top: 80px; width: 100%; text-align: center; ">
+                            <img alt="" src="images/kilimpeza.png" onclick="location.href='kifaxina.html';" style="width: 120px; border-radius: 50%; border: solid 5px #008080; opacity: 0.5;"/>
+                            <h5 id="ki_limpeza" style="color: #1cc7c4 !important; ">  </h5>
+                        </div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+                            <section id="search" class="alt">
+                                <!--<form method="post" action="#">
+            <input type="text" name="query" id="query" placeholder="Search"/>
+        </form>-->
+                                <div style="background: #555; border-radius: 50%; width: 100px; height: 100px;">
+                                    <img id="img-perfil" alt="" src="images/profile.png" style="border-radius: 50%; width: 100px; height: 100px; margin: auto;" />
+                                </div>
+                                <h2 id="txt-nome-perfil"> </h2>
+                                <h5 onclick="FOCA.Structure.logout();"> SAIR </h5>
+                            </section>
+
+                            <!-- Menu -->
+                            <nav id="menu">
+                                <ul>
+                                    <li><a href="kifaxina.html" id="inicio"></a></li>
+                                    <li><a href="orders.html" id="meus_pedidos"></a></li>
+                                    <li><a href="perfil.html" id="meu_perfil"></a></li>
+                                    <li>
+                                        <span class="opener" id="meus_servicos"></span>
+                                        <ul>
+                                            <li><a href="kifaxina.html" id="ki_faxina"></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+
+							<!-- Section -->
+								<section>
+								    <!--<ul class="contact">
+								        <li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
+								        <li class="fa-phone">(000) 000-0000</li>
+								        <li class="fa-home">Barra da Tijuca | Campo Grande <br/>
+								            Rio de Janeiro - Brasil</li>
+								    </ul>-->
+                                    <p class="copyright">&copy; FOCA corp</p>
+								</section>
+						</div>
+					</div>
+
+			</div>
+
+        <div id="panel-menu-down" style="width: 100%; height: 40px; position: fixed; left: 0; right: 0; bottom: 0; border-top: solid 1px #dde1e3; background: #FFF; ">
+            <div onclick="location.href = 'kifaxina.html';" style="width: 32%; height: 40px; float: left; background: url(images/home.png) center center no-repeat; background-size: 20px 20px; "></div>
+            <div onclick="location.href = 'orders.html';" style="width: 32%; height: 40px; float: left; background: url(images/orders.png) center center no-repeat; background-size: 20px 20px; "></div>
+            <div onclick="location.href = 'perfil.html';" style="width: 32%; height: 40px; float: left; background: url(images/prof.png) center center no-repeat; background-size: 20px 20px; "></div>
+        </div>
+
+
+
+	<div id="panel-ratting" style="width: 100%; height: 180px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999; background: #eff1f2; border-top: solid 2px #efefef; display: none;">
+	    <p style="margin: auto; width: 200px; font-size: 17px; font-weight: bold;">Avalie nosso serviço</p>
+        <div>
+            <img id="form-img-perfil-ratting" alt="" src="images/profile.png" style="border-radius: 50%; width: 70px; height: 70px; margin: auto; margin: 10px; float: left;"/>
+            <h3 style="float: left; margin: 10px; color: #1cc7c4;">
+                <font id="txt-panel-ratting-nome"></font>
+                <br/>
+                <span id="txt-panel-ratting-datahora" style="font-size: 12px; color: #999;">24/09/2017 - 09:00h (R$9,00)</span>
+            </h3>
+            <br/>
+            <div id="form-img-perfil-id" name="0" style="width: 100%; height: 50px; position: absolute; bottom: 2%; max-width: 500px; margin: auto;">
+                <div id="ratting-1" onclick="FOCA.Methods.isRatting(1);" style="width: 15%; height: 40px; float: left; background: url(images/star.png) center center no-repeat; background-size: 50%; margin: 2%;"></div>
+                <div id="ratting-2" onclick="FOCA.Methods.isRatting(2);" style="width: 15%; height: 40px; float: left; background: url(images/star.png) center center no-repeat; background-size: 50%; margin: 2%;"></div>
+                <div id="ratting-3" onclick="FOCA.Methods.isRatting(3);" style="width: 15%; height: 40px; float: left; background: url(images/star.png) center center no-repeat; background-size: 50%; margin: 2%;"></div>
+                <div id="ratting-4" onclick="FOCA.Methods.isRatting(4);" style="width: 15%; height: 40px; float: left; background: url(images/star.png) center center no-repeat; background-size: 50%; margin: 2%;"></div>
+                <div id="ratting-5" onclick="FOCA.Methods.isRatting(5);" style="width: 15%; height: 40px; float: left; background: url(images/star.png) center center no-repeat; background-size: 50%; margin: 2%;"></div>
+            </div>
+        </div>
+	</div>
+
+
+	<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	    <script src="assets/js/main.js"></script>
+
+	    <script src="app/core.js"></script>
+	    <script src="app/glossario.js"></script>
+        <script src="app/controller/login.js"></script>
+	    <script src="app/controller/principal.js"></script>
+        <script src="app/model/login.js"></script>
+        <script src="app/model/principal.js"></script>
+	    <script type="text/javascript">
+	    
+            $(document).ready(function () {
+
+                Glossario.Id = 0;
+
+                FOCA.Controller.Principal.load(Glossario.Id);
+
+            });
+
+            function clienteid(id) {
+                FOCAApplicationCore.clienteid(id);
+            }
+	    </script>
+	</body>
+</html>

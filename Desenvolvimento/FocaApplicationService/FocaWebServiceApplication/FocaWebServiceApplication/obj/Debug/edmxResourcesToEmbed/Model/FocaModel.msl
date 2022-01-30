@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FocaModelStoreContainer" CdmEntityContainer="FocaEntities">
+    <EntitySetMapping Name="CodigoAtributo">
+      <EntityTypeMapping TypeName="FocaModel.CodigoAtributo">
+        <MappingFragment StoreEntitySet="CodigoAtributo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodigoAtributoCodigoCliente">
+      <EntityTypeMapping TypeName="FocaModel.CodigoAtributoCodigoCliente">
+        <MappingFragment StoreEntitySet="CodigoAtributoCodigoCliente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCodigoAtributo" ColumnName="IdCodigoAtributo" />
+          <ScalarProperty Name="IdCodigoCliente" ColumnName="IdCodigoCliente" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodigoAtuacaoCodigoAtributo">
+      <EntityTypeMapping TypeName="FocaModel.CodigoAtuacaoCodigoAtributo">
+        <MappingFragment StoreEntitySet="CodigoAtuacaoCodigoAtributo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCodigoRegiaoAtuacao" ColumnName="IdCodigoRegiaoAtuacao" />
+          <ScalarProperty Name="IdCodigoAtributo" ColumnName="IdCodigoAtributo" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodigoCliente">
+      <EntityTypeMapping TypeName="FocaModel.CodigoCliente">
+        <MappingFragment StoreEntitySet="CodigoCliente">
+          <ScalarProperty Name="FlgPerfilConfirmado" ColumnName="FlgPerfilConfirmado" />
+          <ScalarProperty Name="TelefoneCompleto" ColumnName="TelefoneCompleto" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCodigoTipoCliente" ColumnName="IdCodigoTipoCliente" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DDD" ColumnName="DDD" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodigoMeioPagamento">
+      <EntityTypeMapping TypeName="FocaModel.CodigoMeioPagamento">
+        <MappingFragment StoreEntitySet="CodigoMeioPagamento">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCodigoCliente" ColumnName="IdCodigoCliente" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="FlgCartao" ColumnName="FlgCartao" />
+          <ScalarProperty Name="NumeroCartao" ColumnName="NumeroCartao" />
+          <ScalarProperty Name="NomeCartao" ColumnName="NomeCartao" />
+          <ScalarProperty Name="DataValidade" ColumnName="DataValidade" />
+          <ScalarProperty Name="NumeroSeguranca" ColumnName="NumeroSeguranca" />
+          <ScalarProperty Name="InfoAdd" ColumnName="InfoAdd" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodigoOperacao">
+      <EntityTypeMapping TypeName="FocaModel.CodigoOperacao">
+        <MappingFragment StoreEntitySet="CodigoOperacao">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NomeDemanda" ColumnName="NomeDemanda" />
+          <ScalarProperty Name="CodigoDemanda" ColumnName="CodigoDemanda" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="ValorInteiro" ColumnName="ValorInteiro" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodigoRegiaoAtuacao">
+      <EntityTypeMapping TypeName="FocaModel.CodigoRegiaoAtuacao">
+        <MappingFragment StoreEntitySet="CodigoRegiaoAtuacao">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodigoRegiao" ColumnName="CodigoRegiao" />
+          <ScalarProperty Name="NomeSubBairro" ColumnName="NomeSubBairro" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UF" ColumnName="UF" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodigoRegiaoAtuacaoCodigoCliente">
+      <EntityTypeMapping TypeName="FocaModel.CodigoRegiaoAtuacaoCodigoCliente">
+        <MappingFragment StoreEntitySet="CodigoRegiaoAtuacaoCodigoCliente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCodigoRegiaoAtuacao" ColumnName="IdCodigoRegiaoAtuacao" />
+          <ScalarProperty Name="IdCodigoCliente" ColumnName="IdCodigoCliente" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodigoTipoCliente">
+      <EntityTypeMapping TypeName="FocaModel.CodigoTipoCliente">
+        <MappingFragment StoreEntitySet="CodigoTipoCliente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunAcesso">
+      <EntityTypeMapping TypeName="FocaModel.RunAcesso">
+        <MappingFragment StoreEntitySet="RunAcesso">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdRunUsuario" ColumnName="IdRunUsuario" />
+          <ScalarProperty Name="DataAcesso" ColumnName="DataAcesso" />
+          <ScalarProperty Name="Dispositivo" ColumnName="Dispositivo" />
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="IP4" ColumnName="IP4" />
+          <ScalarProperty Name="IP6" ColumnName="IP6" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunCodigoConfirmacao">
+      <EntityTypeMapping TypeName="FocaModel.RunCodigoConfirmacao">
+        <MappingFragment StoreEntitySet="RunCodigoConfirmacao">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCodigoCliente" ColumnName="IdCodigoCliente" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="FlgEmail" ColumnName="FlgEmail" />
+          <ScalarProperty Name="FlgTelefone" ColumnName="FlgTelefone" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunImage">
+      <EntityTypeMapping TypeName="FocaModel.RunImage">
+        <MappingFragment StoreEntitySet="RunImage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunImageCodigoCliente">
+      <EntityTypeMapping TypeName="FocaModel.RunImageCodigoCliente">
+        <MappingFragment StoreEntitySet="RunImageCodigoCliente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCodigoCliente" ColumnName="IdCodigoCliente" />
+          <ScalarProperty Name="IdRunImage" ColumnName="IdRunImage" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunLancamento">
+      <EntityTypeMapping TypeName="FocaModel.RunLancamento">
+        <MappingFragment StoreEntitySet="RunLancamento">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCodigoCliente" ColumnName="IdCodigoCliente" />
+          <ScalarProperty Name="DataOperacao" ColumnName="DataOperacao" />
+          <ScalarProperty Name="ValorOperacao" ColumnName="ValorOperacao" />
+          <ScalarProperty Name="ValorOperacaoInteiro" ColumnName="ValorOperacaoInteiro" />
+          <ScalarProperty Name="FlgPagamento" ColumnName="FlgPagamento" />
+          <ScalarProperty Name="DataConfirmacaoPagamento" ColumnName="DataConfirmacaoPagamento" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunLancamentoRunPagamento">
+      <EntityTypeMapping TypeName="FocaModel.RunLancamentoRunPagamento">
+        <MappingFragment StoreEntitySet="RunLancamentoRunPagamento">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdRunLancamento" ColumnName="IdRunLancamento" />
+          <ScalarProperty Name="IdRunPagamento" ColumnName="IdRunPagamento" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunOperacao">
+      <EntityTypeMapping TypeName="FocaModel.RunOperacao">
+        <MappingFragment StoreEntitySet="RunOperacao">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdRunLancamento" ColumnName="IdRunLancamento" />
+          <ScalarProperty Name="IdCodigoOperacao" ColumnName="IdCodigoOperacao" />
+          <ScalarProperty Name="IdCodigoCliente" ColumnName="IdCodigoCliente" />
+          <ScalarProperty Name="ValorOperacao" ColumnName="ValorOperacao" />
+          <ScalarProperty Name="ValorOperacaoInteiro" ColumnName="ValorOperacaoInteiro" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunPagamento">
+      <EntityTypeMapping TypeName="FocaModel.RunPagamento">
+        <MappingFragment StoreEntitySet="RunPagamento">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdTipoOperacao" ColumnName="IdTipoOperacao" />
+          <ScalarProperty Name="IdMeioPagamento" ColumnName="IdMeioPagamento" />
+          <ScalarProperty Name="IdCodigoCliente" ColumnName="IdCodigoCliente" />
+          <ScalarProperty Name="ValorPago" ColumnName="ValorPago" />
+          <ScalarProperty Name="ValorPagoInteiro" ColumnName="ValorPagoInteiro" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunRating">
+      <EntityTypeMapping TypeName="FocaModel.RunRating">
+        <MappingFragment StoreEntitySet="RunRating">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCodigoClienteCliente" ColumnName="IdCodigoClienteCliente" />
+          <ScalarProperty Name="IdCodigoClientePretador" ColumnName="IdCodigoClientePretador" />
+          <ScalarProperty Name="IndiceAvaliacao" ColumnName="IndiceAvaliacao" />
+          <ScalarProperty Name="DescricaoAvaliacao" ColumnName="DescricaoAvaliacao" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunUsuario">
+      <EntityTypeMapping TypeName="FocaModel.RunUsuario">
+        <MappingFragment StoreEntitySet="RunUsuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCodigoCliente" ColumnName="IdCodigoCliente" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="FlgAtivo" ColumnName="FlgAtivo" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

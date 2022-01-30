@@ -1,0 +1,40 @@
+
+Cliente:
+- Btn back do dispositivo.
+
+[OK]- na primeira tela, incluir checkbox para a tela de termos de uso.
+[OK]- tela de termos de uso.
+[OK]- Esqueci a senha
+[OK]- Primeira tela será a de serviços (KiLimpeza).
+[OK]- Icone HOME- será o de serviço (KiLimpeza).
+[OK]- Na tela de serviço,Mudar os textos (com material / sem material) para  (nosso material / seu material) e acrescer um balao com a foca falando (animação em GIF animado).
+[OK]- Na tela de serviço, trocar o texto (Serviços adicionais / Opcionais).
+[OK]- Na tela de serviço, retirar (fogao, itens de cozinha).
+[OK]- Na tela de serviço, alterar o valor do horario (não podendo diminuir menos do que 2h do horario estimado).
+[OK]- Na tela de serviço, o calculo do valor será serviço / hora apenas. 
+[OK]- Na tela de serviço, aumentar o texto expressivamente valor e hora total.
+[OK]- Na tela de Resumo, Acrescentar o termo (Cronograma / Periodicidade) área unica, semanal, quinzenal, mensal.
+- No total da ordem, fazer um resumo.
+- Na tela de Resumo, endereco auto completavel.
+- Na tela de Resumo, resumo.
+- Na tela de Resumo, se nao tiver os dados de pagamento cadastrado, campos de pagamento e salvar automaticamente os dados bancarios.
+- Na tela de Resumo, acrescentar campo de cupom de desconto.
+- Na tela de Ordens, grid com data e valor. Ao clique.. vai para uma tela de resumo. Com os dados agrupados em sanfona.
+
+- Deixar cadastrar pedido, com informe de pendencia no cadastro (dados bancarios, ...).
+- Tutorial primeiro acesso dos 3 vetores (botões da tela principal)
+- Na tela de serviço, botão de voltar.
+- Pegar o RGB do tom de azul, com felipe.
+
+Prestador:
+- na primeira tela, incluir checkbox para a tela de termos de uso.
+- tela de termos de uso.
+- Definir dias da semana.
+- Btn back do dispositivo.
+- Esqueci a senha
+- 
+
+Servidor:
+- Enviar demanda apenas depois de pagamento efetuado.
+- Considerar os dias disponiveis do prestadores.
+- Serviço de Pagamento.

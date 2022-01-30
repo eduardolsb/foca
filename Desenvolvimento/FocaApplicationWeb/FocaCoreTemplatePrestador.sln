@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FocaCoreTemplatePrestador", "http://localhost:6441", "{34A7DB5B-F459-48C3-8410-452D736BA1FB}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_6441"
+		Debug.AspNetCompiler.PhysicalPath = "F:\EDUARDOLIRA\PROJETOS\Projeto FOCA\Desenvolvimento\FocaApplicationWeb\FocaCoreTemplatePrestador\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6441\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_6441"
+		Release.AspNetCompiler.PhysicalPath = "F:\EDUARDOLIRA\PROJETOS\Projeto FOCA\Desenvolvimento\FocaApplicationWeb\FocaCoreTemplatePrestador\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6441\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "F:\EDUARDOLIRA\PROJETOS\Projeto FOCA\Desenvolvimento\FocaApplicationWeb\FocaCoreTemplatePrestador\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34A7DB5B-F459-48C3-8410-452D736BA1FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34A7DB5B-F459-48C3-8410-452D736BA1FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

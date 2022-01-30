@@ -1,0 +1,635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FocaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="CodigoAtributo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="500" />
+    <Property Name="Descricao" Type="varchar" MaxLength="1000" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CodigoAtributoCodigoCliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCodigoAtributo" Type="bigint" />
+    <Property Name="IdCodigoCliente" Type="bigint" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CodigoAtuacaoCodigoAtributo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCodigoRegiaoAtuacao" Type="bigint" />
+    <Property Name="IdCodigoAtributo" Type="bigint" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CodigoCliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCodigoTipoCliente" Type="bigint" />
+    <Property Name="Nome" Type="varchar" MaxLength="1000" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="DDD" Type="varchar" MaxLength="10" />
+    <Property Name="Telefone" Type="varchar" MaxLength="50" />
+    <Property Name="TelefoneCompleto" Type="varchar" MaxLength="50" />
+    <Property Name="FlgPerfilConfirmado" Type="bit" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CodigoMeioPagamento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCodigoCliente" Type="bigint" />
+    <Property Name="Nome" Type="varchar" MaxLength="500" />
+    <Property Name="Descricao" Type="varchar" MaxLength="1000" />
+    <Property Name="FlgCartao" Type="bit" />
+    <Property Name="NumeroCartao" Type="nvarchar" MaxLength="500" />
+    <Property Name="NomeCartao" Type="nvarchar" MaxLength="50" />
+    <Property Name="DataValidade" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumeroSeguranca" Type="nvarchar" MaxLength="50" />
+    <Property Name="InfoAdd" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CodigoOperacao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomeDemanda" Type="nvarchar" MaxLength="500" />
+    <Property Name="CodigoDemanda" Type="nvarchar" MaxLength="50" />
+    <Property Name="Valor" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ValorInteiro" Type="bigint" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CodigoRegiaoAtuacao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoRegiao" Type="varchar" MaxLength="500" />
+    <Property Name="NomeSubBairro" Type="nvarchar" MaxLength="500" />
+    <Property Name="Cidade" Type="nvarchar" MaxLength="500" />
+    <Property Name="Estado" Type="nvarchar" MaxLength="500" />
+    <Property Name="UF" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CodigoRegiaoAtuacaoCodigoCliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCodigoRegiaoAtuacao" Type="bigint" />
+    <Property Name="IdCodigoCliente" Type="bigint" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CodigoTipoCliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="RunAcesso">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRunUsuario" Type="bigint" />
+    <Property Name="DataAcesso" Type="datetime" />
+    <Property Name="Dispositivo" Type="int" />
+    <Property Name="IMEI" Type="varchar" MaxLength="50" />
+    <Property Name="IP4" Type="varchar" MaxLength="50" />
+    <Property Name="IP6" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RunCodigoConfirmacao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCodigoCliente" Type="bigint" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlgEmail" Type="bit" />
+    <Property Name="FlgTelefone" Type="bit" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="RunImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="FlgAtivo" Type="nchar" MaxLength="10" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="RunImageCodigoCliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCodigoCliente" Type="bigint" />
+    <Property Name="IdRunImage" Type="bigint" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="RunLancamento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCodigoCliente" Type="bigint" />
+    <Property Name="DataOperacao" Type="datetime" />
+    <Property Name="ValorOperacao" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ValorOperacaoInteiro" Type="bigint" />
+    <Property Name="FlgPagamento" Type="bit" />
+    <Property Name="DataConfirmacaoPagamento" Type="datetime" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="RunLancamentoRunPagamento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRunLancamento" Type="bigint" />
+    <Property Name="IdRunPagamento" Type="bigint" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="RunOperacao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRunLancamento" Type="bigint" />
+    <Property Name="IdCodigoOperacao" Type="bigint" />
+    <Property Name="IdCodigoCliente" Type="bigint" />
+    <Property Name="ValorOperacao" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ValorOperacaoInteiro" Type="bigint" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="RunPagamento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTipoOperacao" Type="bigint" />
+    <Property Name="IdMeioPagamento" Type="bigint" />
+    <Property Name="IdCodigoCliente" Type="bigint" />
+    <Property Name="ValorPago" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ValorPagoInteiro" Type="bigint" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="RunRating">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCodigoClienteCliente" Type="bigint" />
+    <Property Name="IdCodigoClientePretador" Type="bigint" />
+    <Property Name="IndiceAvaliacao" Type="int" />
+    <Property Name="DescricaoAvaliacao" Type="varchar" MaxLength="1000" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="RunUsuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCodigoCliente" Type="bigint" />
+    <Property Name="Usuario" Type="varchar" MaxLength="500" />
+    <Property Name="Senha" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlgAtivo" Type="bit" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="date" />
+    <Property Name="Uid" Type="uniqueidentifier" />
+  </EntityType>
+  <Association Name="FK_CodigoAtributoCodigoCliente_CodigoAtributo">
+    <End Role="CodigoAtributo" Type="Self.CodigoAtributo" Multiplicity="0..1" />
+    <End Role="CodigoAtributoCodigoCliente" Type="Self.CodigoAtributoCodigoCliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoAtributo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigoAtributoCodigoCliente">
+        <PropertyRef Name="IdCodigoAtributo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CodigoAtributoCodigoCliente_CodigoCliente">
+    <End Role="CodigoCliente" Type="Self.CodigoCliente" Multiplicity="0..1" />
+    <End Role="CodigoAtributoCodigoCliente" Type="Self.CodigoAtributoCodigoCliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoCliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigoAtributoCodigoCliente">
+        <PropertyRef Name="IdCodigoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CodigoAtuacaoCodigoAtributo_CodigoAtributo">
+    <End Role="CodigoAtributo" Type="Self.CodigoAtributo" Multiplicity="0..1" />
+    <End Role="CodigoAtuacaoCodigoAtributo" Type="Self.CodigoAtuacaoCodigoAtributo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoAtributo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigoAtuacaoCodigoAtributo">
+        <PropertyRef Name="IdCodigoAtributo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CodigoAtuacaoCodigoAtributo_CodigoRegiaoAtuacao">
+    <End Role="CodigoRegiaoAtuacao" Type="Self.CodigoRegiaoAtuacao" Multiplicity="0..1" />
+    <End Role="CodigoAtuacaoCodigoAtributo" Type="Self.CodigoAtuacaoCodigoAtributo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoRegiaoAtuacao">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigoAtuacaoCodigoAtributo">
+        <PropertyRef Name="IdCodigoRegiaoAtuacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CodigoCliente_CodigoTipoCliente">
+    <End Role="CodigoTipoCliente" Type="Self.CodigoTipoCliente" Multiplicity="0..1" />
+    <End Role="CodigoCliente" Type="Self.CodigoCliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoTipoCliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigoCliente">
+        <PropertyRef Name="IdCodigoTipoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CodigoMeioPagamento_CodigoCliente">
+    <End Role="CodigoCliente" Type="Self.CodigoCliente" Multiplicity="0..1" />
+    <End Role="CodigoMeioPagamento" Type="Self.CodigoMeioPagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoCliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigoMeioPagamento">
+        <PropertyRef Name="IdCodigoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CodigoRegiaoAtuacaoCodigoCliente_CodigoCliente">
+    <End Role="CodigoCliente" Type="Self.CodigoCliente" Multiplicity="0..1" />
+    <End Role="CodigoRegiaoAtuacaoCodigoCliente" Type="Self.CodigoRegiaoAtuacaoCodigoCliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoCliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigoRegiaoAtuacaoCodigoCliente">
+        <PropertyRef Name="IdCodigoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CodigoRegiaoAtuacaoCodigoCliente_CodigoRegiaoAtuacao">
+    <End Role="CodigoRegiaoAtuacao" Type="Self.CodigoRegiaoAtuacao" Multiplicity="0..1" />
+    <End Role="CodigoRegiaoAtuacaoCodigoCliente" Type="Self.CodigoRegiaoAtuacaoCodigoCliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoRegiaoAtuacao">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigoRegiaoAtuacaoCodigoCliente">
+        <PropertyRef Name="IdCodigoRegiaoAtuacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunAcesso_RunUsuario">
+    <End Role="RunUsuario" Type="Self.RunUsuario" Multiplicity="0..1" />
+    <End Role="RunAcesso" Type="Self.RunAcesso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RunUsuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunAcesso">
+        <PropertyRef Name="IdRunUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunCodigoConfirmacao_CodigoCliente">
+    <End Role="CodigoCliente" Type="Self.CodigoCliente" Multiplicity="0..1" />
+    <End Role="RunCodigoConfirmacao" Type="Self.RunCodigoConfirmacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoCliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunCodigoConfirmacao">
+        <PropertyRef Name="IdCodigoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunImageCodigoCliente_CodigoCliente">
+    <End Role="CodigoCliente" Type="Self.CodigoCliente" Multiplicity="0..1" />
+    <End Role="RunImageCodigoCliente" Type="Self.RunImageCodigoCliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoCliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunImageCodigoCliente">
+        <PropertyRef Name="IdCodigoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunImageCodigoCliente_RunImage">
+    <End Role="RunImage" Type="Self.RunImage" Multiplicity="0..1" />
+    <End Role="RunImageCodigoCliente" Type="Self.RunImageCodigoCliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RunImage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunImageCodigoCliente">
+        <PropertyRef Name="IdRunImage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunLancamento_CodigoCliente">
+    <End Role="CodigoCliente" Type="Self.CodigoCliente" Multiplicity="0..1" />
+    <End Role="RunLancamento" Type="Self.RunLancamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoCliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunLancamento">
+        <PropertyRef Name="IdCodigoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunLancamentoRunPagamento_RunLancamento">
+    <End Role="RunLancamento" Type="Self.RunLancamento" Multiplicity="0..1" />
+    <End Role="RunLancamentoRunPagamento" Type="Self.RunLancamentoRunPagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RunLancamento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunLancamentoRunPagamento">
+        <PropertyRef Name="IdRunLancamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunLancamentoRunPagamento_RunPagamento">
+    <End Role="RunPagamento" Type="Self.RunPagamento" Multiplicity="0..1" />
+    <End Role="RunLancamentoRunPagamento" Type="Self.RunLancamentoRunPagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RunPagamento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunLancamentoRunPagamento">
+        <PropertyRef Name="IdRunPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunOperacao_CodigoCliente">
+    <End Role="CodigoCliente" Type="Self.CodigoCliente" Multiplicity="0..1" />
+    <End Role="RunOperacao" Type="Self.RunOperacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoCliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunOperacao">
+        <PropertyRef Name="IdCodigoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunOperacao_CodigoOperacao">
+    <End Role="CodigoOperacao" Type="Self.CodigoOperacao" Multiplicity="0..1" />
+    <End Role="RunOperacao" Type="Self.RunOperacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoOperacao">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunOperacao">
+        <PropertyRef Name="IdCodigoOperacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunOperacao_RunLancamento">
+    <End Role="RunLancamento" Type="Self.RunLancamento" Multiplicity="0..1" />
+    <End Role="RunOperacao" Type="Self.RunOperacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RunLancamento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunOperacao">
+        <PropertyRef Name="IdRunLancamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunPagamento_CodigoMeioPagamento">
+    <End Role="CodigoMeioPagamento" Type="Self.CodigoMeioPagamento" Multiplicity="0..1" />
+    <End Role="RunPagamento" Type="Self.RunPagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoMeioPagamento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunPagamento">
+        <PropertyRef Name="IdMeioPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunRating_CodigoCliente">
+    <End Role="CodigoCliente" Type="Self.CodigoCliente" Multiplicity="0..1" />
+    <End Role="RunRating" Type="Self.RunRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoCliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunRating">
+        <PropertyRef Name="IdCodigoClienteCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunRating_CodigoCliente1">
+    <End Role="CodigoCliente" Type="Self.CodigoCliente" Multiplicity="0..1" />
+    <End Role="RunRating" Type="Self.RunRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoCliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunRating">
+        <PropertyRef Name="IdCodigoClientePretador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RunUsuario_CodigoCliente">
+    <End Role="CodigoCliente" Type="Self.CodigoCliente" Multiplicity="0..1" />
+    <End Role="RunUsuario" Type="Self.RunUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoCliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RunUsuario">
+        <PropertyRef Name="IdCodigoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FocaModelStoreContainer">
+    <EntitySet Name="CodigoAtributo" EntityType="Self.CodigoAtributo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CodigoAtributoCodigoCliente" EntityType="Self.CodigoAtributoCodigoCliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CodigoAtuacaoCodigoAtributo" EntityType="Self.CodigoAtuacaoCodigoAtributo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CodigoCliente" EntityType="Self.CodigoCliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CodigoMeioPagamento" EntityType="Self.CodigoMeioPagamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CodigoOperacao" EntityType="Self.CodigoOperacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CodigoRegiaoAtuacao" EntityType="Self.CodigoRegiaoAtuacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CodigoRegiaoAtuacaoCodigoCliente" EntityType="Self.CodigoRegiaoAtuacaoCodigoCliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CodigoTipoCliente" EntityType="Self.CodigoTipoCliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunAcesso" EntityType="Self.RunAcesso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunCodigoConfirmacao" EntityType="Self.RunCodigoConfirmacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunImage" EntityType="Self.RunImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunImageCodigoCliente" EntityType="Self.RunImageCodigoCliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunLancamento" EntityType="Self.RunLancamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunLancamentoRunPagamento" EntityType="Self.RunLancamentoRunPagamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunOperacao" EntityType="Self.RunOperacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunPagamento" EntityType="Self.RunPagamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunRating" EntityType="Self.RunRating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunUsuario" EntityType="Self.RunUsuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CodigoAtributoCodigoCliente_CodigoAtributo" Association="Self.FK_CodigoAtributoCodigoCliente_CodigoAtributo">
+      <End Role="CodigoAtributo" EntitySet="CodigoAtributo" />
+      <End Role="CodigoAtributoCodigoCliente" EntitySet="CodigoAtributoCodigoCliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CodigoAtributoCodigoCliente_CodigoCliente" Association="Self.FK_CodigoAtributoCodigoCliente_CodigoCliente">
+      <End Role="CodigoCliente" EntitySet="CodigoCliente" />
+      <End Role="CodigoAtributoCodigoCliente" EntitySet="CodigoAtributoCodigoCliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CodigoAtuacaoCodigoAtributo_CodigoAtributo" Association="Self.FK_CodigoAtuacaoCodigoAtributo_CodigoAtributo">
+      <End Role="CodigoAtributo" EntitySet="CodigoAtributo" />
+      <End Role="CodigoAtuacaoCodigoAtributo" EntitySet="CodigoAtuacaoCodigoAtributo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CodigoAtuacaoCodigoAtributo_CodigoRegiaoAtuacao" Association="Self.FK_CodigoAtuacaoCodigoAtributo_CodigoRegiaoAtuacao">
+      <End Role="CodigoRegiaoAtuacao" EntitySet="CodigoRegiaoAtuacao" />
+      <End Role="CodigoAtuacaoCodigoAtributo" EntitySet="CodigoAtuacaoCodigoAtributo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CodigoCliente_CodigoTipoCliente" Association="Self.FK_CodigoCliente_CodigoTipoCliente">
+      <End Role="CodigoTipoCliente" EntitySet="CodigoTipoCliente" />
+      <End Role="CodigoCliente" EntitySet="CodigoCliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CodigoMeioPagamento_CodigoCliente" Association="Self.FK_CodigoMeioPagamento_CodigoCliente">
+      <End Role="CodigoCliente" EntitySet="CodigoCliente" />
+      <End Role="CodigoMeioPagamento" EntitySet="CodigoMeioPagamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CodigoRegiaoAtuacaoCodigoCliente_CodigoCliente" Association="Self.FK_CodigoRegiaoAtuacaoCodigoCliente_CodigoCliente">
+      <End Role="CodigoCliente" EntitySet="CodigoCliente" />
+      <End Role="CodigoRegiaoAtuacaoCodigoCliente" EntitySet="CodigoRegiaoAtuacaoCodigoCliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CodigoRegiaoAtuacaoCodigoCliente_CodigoRegiaoAtuacao" Association="Self.FK_CodigoRegiaoAtuacaoCodigoCliente_CodigoRegiaoAtuacao">
+      <End Role="CodigoRegiaoAtuacao" EntitySet="CodigoRegiaoAtuacao" />
+      <End Role="CodigoRegiaoAtuacaoCodigoCliente" EntitySet="CodigoRegiaoAtuacaoCodigoCliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunAcesso_RunUsuario" Association="Self.FK_RunAcesso_RunUsuario">
+      <End Role="RunUsuario" EntitySet="RunUsuario" />
+      <End Role="RunAcesso" EntitySet="RunAcesso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunCodigoConfirmacao_CodigoCliente" Association="Self.FK_RunCodigoConfirmacao_CodigoCliente">
+      <End Role="CodigoCliente" EntitySet="CodigoCliente" />
+      <End Role="RunCodigoConfirmacao" EntitySet="RunCodigoConfirmacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunImageCodigoCliente_CodigoCliente" Association="Self.FK_RunImageCodigoCliente_CodigoCliente">
+      <End Role="CodigoCliente" EntitySet="CodigoCliente" />
+      <End Role="RunImageCodigoCliente" EntitySet="RunImageCodigoCliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunImageCodigoCliente_RunImage" Association="Self.FK_RunImageCodigoCliente_RunImage">
+      <End Role="RunImage" EntitySet="RunImage" />
+      <End Role="RunImageCodigoCliente" EntitySet="RunImageCodigoCliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunLancamento_CodigoCliente" Association="Self.FK_RunLancamento_CodigoCliente">
+      <End Role="CodigoCliente" EntitySet="CodigoCliente" />
+      <End Role="RunLancamento" EntitySet="RunLancamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunLancamentoRunPagamento_RunLancamento" Association="Self.FK_RunLancamentoRunPagamento_RunLancamento">
+      <End Role="RunLancamento" EntitySet="RunLancamento" />
+      <End Role="RunLancamentoRunPagamento" EntitySet="RunLancamentoRunPagamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunLancamentoRunPagamento_RunPagamento" Association="Self.FK_RunLancamentoRunPagamento_RunPagamento">
+      <End Role="RunPagamento" EntitySet="RunPagamento" />
+      <End Role="RunLancamentoRunPagamento" EntitySet="RunLancamentoRunPagamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunOperacao_CodigoCliente" Association="Self.FK_RunOperacao_CodigoCliente">
+      <End Role="CodigoCliente" EntitySet="CodigoCliente" />
+      <End Role="RunOperacao" EntitySet="RunOperacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunOperacao_CodigoOperacao" Association="Self.FK_RunOperacao_CodigoOperacao">
+      <End Role="CodigoOperacao" EntitySet="CodigoOperacao" />
+      <End Role="RunOperacao" EntitySet="RunOperacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunOperacao_RunLancamento" Association="Self.FK_RunOperacao_RunLancamento">
+      <End Role="RunLancamento" EntitySet="RunLancamento" />
+      <End Role="RunOperacao" EntitySet="RunOperacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunPagamento_CodigoMeioPagamento" Association="Self.FK_RunPagamento_CodigoMeioPagamento">
+      <End Role="CodigoMeioPagamento" EntitySet="CodigoMeioPagamento" />
+      <End Role="RunPagamento" EntitySet="RunPagamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunRating_CodigoCliente" Association="Self.FK_RunRating_CodigoCliente">
+      <End Role="CodigoCliente" EntitySet="CodigoCliente" />
+      <End Role="RunRating" EntitySet="RunRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunRating_CodigoCliente1" Association="Self.FK_RunRating_CodigoCliente1">
+      <End Role="CodigoCliente" EntitySet="CodigoCliente" />
+      <End Role="RunRating" EntitySet="RunRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RunUsuario_CodigoCliente" Association="Self.FK_RunUsuario_CodigoCliente">
+      <End Role="CodigoCliente" EntitySet="CodigoCliente" />
+      <End Role="RunUsuario" EntitySet="RunUsuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

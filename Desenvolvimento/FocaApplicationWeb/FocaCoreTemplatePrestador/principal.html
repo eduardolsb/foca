@@ -1,0 +1,120 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>FOCA</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+					    <div class="inner" style="margin-top: 0; width: 100%; height: 80px; text-align: center; background: #000;">
+					        <img alt="" src="images/foca.png" style="width: 40px; margin-top: 10px; opacity: 0.2;" />
+					        <h5 id="sessao_de_servicos" style="color: #1cc7c4 !important; ">  </h5>
+
+					    </div>
+
+                        <div class="inner" style="margin-top: 80px; width: 100%; text-align: center; ">
+                            <!--<img alt="" src="images/kilimpeza.png" onclick="location.href='kifaxina.html';" style="width: 120px; border-radius: 50%; border: solid 5px #008080; opacity: 0.5;"/>-->
+                            <h2 id="ki_limpeza_status" style="color: #1cc7c4 !important; ">  </h2>
+                            <h2 id="ki_limpeza" style="color: #000 !important;"> </h2>
+
+                            <hr/>
+
+                            <h2 id="ki_limpeza_total" style="color: #1cc7c4 !important; ">  </h2>
+                            <h2 id="ki_limpeza_total_valor" style="color: #000 !important; "> R$0,00 em 0 ATV. </h2>
+                        </div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+                            <section id="search" class="alt">
+                                <!--<form method="post" action="#">
+            <input type="text" name="query" id="query" placeholder="Search"/>
+        </form>-->
+                                <div style="background: #555; border-radius: 50%; width: 100px; height: 100px;">
+                                    <img id="img-perfil" alt="" src="images/profile.png" style="border-radius: 50%; width: 100px; height: 100px; margin: auto;" />
+                                </div>
+                                <h2 id="txt-nome-perfil"> </h2>
+                                <h5 onclick="FOCA.Structure.logout();"> SAIR </h5>
+                            </section>
+
+                            <!-- Menu -->
+                            <nav id="menu">
+                                <ul>
+                                    <li><a href="principal.html" id="inicio"></a></li>
+                                    <li><a href="orders.html" id="meus_pedidos"></a></li>
+                                    <li><a href="perfil.html" id="meu_perfil"></a></li>
+                                    <!--<li>
+                                        <span class="opener" id="meus_servicos"></span>
+                                        <ul>
+                                            <li><a href="kifaxina.html" id="ki_faxina"></a></li>
+                                        </ul>
+                                    </li>-->
+                                </ul>
+                            </nav>
+
+							<!-- Section -->
+								<section>
+								    <!--<ul class="contact">
+								        <li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
+								        <li class="fa-phone">(000) 000-0000</li>
+								        <li class="fa-home">Barra da Tijuca | Campo Grande <br/>
+								            Rio de Janeiro - Brasil</li>
+								    </ul>-->
+                                    <p class="copyright">&copy; FOCA corp</p>
+								</section>
+						</div>
+					</div>
+
+			</div>
+
+	<div id="panel-menu-down" style="width: 100%; height: 80px; position: fixed; left: 0; right: 0; bottom: 0;">
+	    <div onclick="location.href = 'principal.html';" style="width: 32%; height: 70px; float: left; background: url(images/home.png) center center no-repeat; background-size: 70px 70px; opacity: 0.3;"></div>
+	    <div onclick="location.href = 'orders.html';" style="width: 32%; height: 70px; float: left; background: url(images/orders.png) center center no-repeat; background-size: 70px 70px;"></div>
+	    <div onclick="location.href = 'perfil.html';" style="width: 32%; height: 70px; float: left; background: url(images/prof.png) center center no-repeat; background-size: 70px 70px;"></div>
+	</div>
+
+
+	<div id="panel-chamada" style="width: 100%; height: auto; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #222 url(images/face_2.png) center center no-repeat; background-size: 60%; z-index: 9999; opacity: 0.8; display: none;">
+	    <div id="btn-aceitar" style="width: 40%; height: 50%; position: absolute; top: 50%; bottom: 50%; left: 0;"></div>
+        <div id="btn-recusar" style="width: 40%; height: 50%; position: absolute; top: 50%; bottom: 50%; right: 0; "></div>
+	</div>
+
+	<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	    <script src="assets/js/main.js"></script>
+
+	    <script src="app/core.js"></script>
+	    <script src="app/glossario.js"></script>
+        <script src="app/controller/login.js"></script>
+	    <script src="app/controller/principal.js"></script>
+        <script src="app/model/login.js"></script>
+        <script src="app/model/principal.js"></script>
+	    <script type="text/javascript">
+	    
+            $(document).ready(function () {
+
+                Glossario.Id = 0;
+
+                FOCA.Controller.Principal.load(Glossario.Id);
+
+            });
+
+	    </script>
+	</body>
+</html>
