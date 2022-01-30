@@ -1,0 +1,177 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>FOCA</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+					    <div class="inner" style="margin-top: 0; width: 100%; height: 120px; text-align: center; background: #000; position: fixed;">
+					        <img alt="" src="images/foca.png" style="width: 40px; margin-top: 10px; opacity: 0.2;" />
+					        <h5 id="txt_ki_faxina" style="color: #1cc7c4 !important;"> </h5>
+                            
+					    </div>
+
+                        <div class="inner" style="margin-top:130px; width: 100%; text-align: center; ">
+                            <h3>Cronograma e Endereço</h3>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div id="div-panel-completed-adreess">
+                                            <select id="cb-bairro">
+                                                <option value="0">Selecione um Bairro de Operação</option>
+                                                <option value="Barra da Tijuca, Rio de Janeiro, RJ">Barra da Tijuca, Rio de Janeiro - RJ</option>
+                                                <option value="Campo Grande, Rio de Janeiro, RJ">Campo Grande, Rio de Janeiro - RJ</option>
+                                            </select>
+                                            <br />
+                                            <input id="txt-endereco" type="text" value="" placeholder="Endereço Completo" style="width: 100%; text-align: center;"/>
+                                            <br/>
+                                            <div id="div-panel-nome-endereco" name="0" style="display: none;">
+                                                <input id="txt-endereco-nome" type="text" value="" placeholder="Nome do endereço" style="width: 100%; text-align: center; background: #e1eef6;"/>
+                                                <br/>
+                                            </div>
+                                            <input id="btn-salvar-endereco" type="button" value="Salvar Endereço?" style="width: 100%; text-align: center;"/>
+                                        </div>
+                                        <div id="div-panel-related-address" style="display: none;">
+                                            <div id="grid-panel-address"></div>
+                                            <div id="add-panel-address">
+                                                <br/>
+                                                <br />
+                                                <input id="btn-add-endereco" onclick="FOCA.Controller.Finalizacao.functions.addMore();" type="button" value="Adicionar mais endereço?" style="width: 100%; text-align: center;"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <h3>Data e Horário</h3>
+                            <table>
+                                <tr>
+                                    <td> <input id="txt-data" type="date" value="" placeholder="00/00/0000" style="width: 100%; text-align: center;" /> </td>
+                                    <td> <input id="txt-hora" type="text" value="" placeholder="00:00" style="width: 100%; text-align: center;" /></td>
+                                </tr>
+                            </table>
+
+                            <!--<h3>Gênero do Profissional</h3>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <select id="cb-genero">
+                                            <option value="F">Feminino</option>
+                                            <option value="M">Masculino</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>-->
+
+                            <h3>Total da Ordem</h3>
+                            <table>
+                                <tr>
+                                    <td> <img alt="" style="width: 50px;" src="images/cart.png"/> </td>
+                                    <td>
+                                        <h6> Total Horas Estimada (<span id="total-horas"></span>h) </h6> <br/>
+                                        <h3> Total: R$ <span id="total-reais"></span> </h3>
+                                    </td>
+                                </tr>
+                            </table>
+                            <input id="btn-continuar" type="button" value="Continuar  >>" style="width: 250px;"/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+                            <section id="search" class="alt">
+                                <!--<form method="post" action="#">
+            <input type="text" name="query" id="query" placeholder="Search"/>
+        </form>-->
+                                <div style="background: #555; border-radius: 50%; width: 100px; height: 100px;">
+                                    <img id="img-perfil" alt="" src="images/profile.png" style="border-radius: 50%; width: 100px; height: 100px; margin: auto;" />
+                                </div>
+                                <h2 id="txt-nome-perfil"> </h2>
+                                <h5 onclick="FOCA.Structure.logout();"> SAIR </h5>
+                            </section>
+
+                            <!-- Menu -->
+                            <nav id="menu">
+                                <ul>
+                                    <li><a href="principal.html" id="inicio"></a></li>
+                                    <li><a href="orders.html" id="meus_pedidos"></a></li>
+                                    <li><a href="perfil.html" id="meu_perfil"></a></li>
+                                    <li>
+                                        <span class="opener" id="meus_servicos"></span>
+                                        <ul>
+                                            <li><a href="kifaxina.html" id="ki_faxina"></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+
+							<!-- Section -->
+								<section>
+								    <!--<ul class="contact">
+								        <li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
+								        <li class="fa-phone">(000) 000-0000</li>
+								        <li class="fa-home">Barra da Tijuca | Campo Grande <br/>
+								            Rio de Janeiro - Brasil</li>
+								    </ul>-->
+                                    <p class="copyright">&copy; FOCA corp</p>
+								</section>
+						</div>
+					</div>
+
+			</div>
+
+	<div id="panel-menu-down" style="width: 100%; height: 80px; position: fixed; left: 0; right: 0; bottom: 0;">
+	    <div onclick="location.href = 'principal.html';" style="width: 32%; height: 70px; float: left; background: url(images/home.png) center center no-repeat; background-size: 70px 70px; "></div>
+        <div onclick="location.href = 'orders.html';" style="width: 32%; height: 70px; float: left; background: url(images/orders.png) center center no-repeat; background-size: 70px 70px; "></div>
+        <div onclick="location.href = 'perfil.html';" style="width: 32%; height: 70px; float: left; background: url(images/prof.png) center center no-repeat; background-size: 70px 70px; "></div>
+	</div>
+	<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+	        <script src="assets/js/util.js"></script>
+            <script src="assets/js/jquery.mask.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	    <script src="assets/js/main.js"></script>
+
+	    <script src="app/core.js"></script>
+        <script src="app/glossario.js"></script>
+        <script src="app/controller/finalizacao.js"></script>
+        <script src="app/model/finalizacao.js"></script>
+	    <script type="text/javascript">
+	    
+    	    $(document).ready(function () {
+
+    	        Glossario.Id = 0;
+
+    	        FOCA.Controller.Finalizacao.load(Glossario.Id);
+
+
+    	    });
+
+    	</script>
+	</body>
+</html>
